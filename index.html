@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikas Kisan Bazaar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 🔄 Loader -->
+<div id="loader" class="loader">
+  <h2>🔄 Loading Vikas Kisan Bazaar...</h2>
+</div>
+
+<!-- 🌙 Dark Mode Toggle -->
+<button onclick="toggleDarkMode()" style="position:fixed;top:10px;right:10px;z-index:9999;">🌙 Toggle Dark Mode</button>
+
+<!-- 🌐 Language Switcher -->
+<section style="padding:1rem;">
+  <label for="lang">🌍 Language:</label>
+  <select onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+    <option value="mr">मराठी</option>
+    <option value="gu">ગુજરાતી</option>
+  </select>
+</section>
+
+<!-- 🧑‍🌾 Farmer Login -->
+<section style="padding:1rem;">
+  <h2>👨‍🌾 Farmer Login</h2>
+  <input type="text" id="farmerUsername" placeholder="Username" />
+  <input type="password" id="farmerPassword" placeholder="Password" />
+  <button onclick="loginFarmer()">Login</button>
+</section>
+
+<!-- 🛍️ Retailer Login -->
+<section style="padding:1rem;">
+  <h2>🛍️ Retailer Login</h2>
+  <input type="text" id="retailerUsername" placeholder="Username" />
+  <input type="password" id="retailerPassword" placeholder="Password" />
+  <button onclick="loginRetailer()">Login</button>
+</section>
+
+<!-- 🌟 Home Banner -->
+<section style="padding:2rem;">
+  <h1>🌾 Vikas Kisan Bazaar 🌾</h1>
+  <p>Connecting Farmers and Retailers Directly</p>
+</section>
+
+<!-- 🎤 Voice Search + 🔍 Text Search -->
+<section style="padding:2rem;">
+  <input type="text" id="searchInput" placeholder="🔍 Search products..." onkeyup="searchProduct()" />
+  <button onclick="startVoiceSearch()">🎤 Voice Search</button>
+  <p id="voiceResult">Speak product name...</p>
+</section>
+
+<!-- 📂 Category Filter -->
+<section style="padding:2rem;">
+  <label for="category">🧺 Filter by Category:</label>
+  <select onchange="filterByCategory(this.value)">
+    <option value="all">All</option>
+    <option value="fruits">Fruits</option>
+    <option value="vegetables">Vegetables</option>
+    <option value="grains">Grains</option>
+    <option value="spices">Spices</option>
+  </select>
+</section>
+
+<!-- 🧑‍🌾 Farmer Product Upload -->
+<section style="padding:2rem;">
+  <h2>📤 Upload Product</h2>
+  <input type="text" id="uploadName" placeholder="Product Name" />
+  <input type="number" id="uploadPrice" placeholder="Price ₹" />
+  <button onclick="uploadProduct()">Upload</button>
+</section>
+
+<!-- 🛒 Products Display -->
+<section style="padding:2rem;">
+  <h2>🛍️ All Products</h2>
+  <div id="productContainer"></div>
+</section>
+
+<!-- 🧺 Retailer Cart -->
+<section style="padding:2rem;">
+  <h2>🧺 Your Cart</h2>
+  <ul id="cartList"></ul>
+  <button onclick="placeOrder()">Place Order</button>
+</section>
+
+<!-- 🧾 Order History -->
+<section style="padding:2rem;">
+  <h2>📜 Order History</h2>
+  <ul id="orderHistoryList"></ul>
+</section>
+
+<!-- 🛠️ Admin Dashboard -->
+<section style="padding:2rem;">
+  <h2>🛡️ Admin Panel</h2>
+  <button onclick="clearAll()">🚨 Clear All Data</button>
+</section>
+
+<!-- ⭐ Review Section -->
+<section style="padding:2rem;">
+  <h2>⭐ Rate Us</h2>
+  <input type="number" id="rating" min="1" max="5" placeholder="Rating 1-5"/>
+  <textarea id="reviewText" placeholder="Write your feedback..."></textarea>
+  <button onclick="submitReview()">Submit Review</button>
+  <ul id="reviewList"></ul>
+</section>
+
+<!-- 🖨️ Print Button -->
+<section style="padding:2rem;">
+  <button onclick="window.print()">🖨️ Print This Page</button>
+</section>
+
+<!-- 📡 Offline Banner -->
+<div id="offlineBanner" style="display:none;background:red;color:white;text-align:center;padding:1rem;">
+  📡 You are offline. Some features may not work.
+</div>
+
+<!-- 🔥 Firebase Placeholder -->
+<section style="padding:2rem;">
+  <p>⚠️ Firebase integration coming soon...</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
